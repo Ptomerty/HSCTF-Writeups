@@ -1,0 +1,10 @@
+extra: string
+name: "Andrew Wiles"
+alias: "Andrew Wiles"
+author: "Ezra Edelman, Spencer H"
+category: "other"
+description: "Keith claims that he's disproven Fermat's Last Theorem for n = 3! He says if you can do it too at <code>nc shell.hsctf.com 9999</code>, he'll reward you with a flag..."
+points: 250
+grading: "flag"
+flag: "flag{contained_in_margins}"
+stage: HSCTF

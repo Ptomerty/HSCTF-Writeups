@@ -1,0 +1,295 @@
+; whats up nerds its scarce here
+; solution below ;)
+; r13: 66 6c 61 67
+; r14: 7b 67 33 63
+; r15: 6b 30 5f 63
+; r16: 30 64 33 35
+; r17: 5f 61 72 33
+; r18: 5f 73 74 31
+; r19: 6c 6c 5f 75
+; r20: 73 33 64 7d
+; r21: 00 00 00 00
+
+main:
+	; use r13 as a springboard for blrl trick
+
+garbage:
+	li r19, 0x81 
+	li r15, 911  
+	xor r13, r13, r13
+	li r18, 0x3673 
+	lis r13, 0x80
+	li r13, 0x1080
+	lis r14, 80
+	lis r20, 3894 
+	.long 0x66103063 ; i love garbage instructions!!
+	.long 0x33266446 ; mean to increase length of encoded string; shoudl be easy to differentiate
+	.long 0x30245120
+	.long 0x06421302
+	.long 0x54421456
+	.long 0x55644146
+	.long 0x24651225
+	.long 0x24244204
+	.long 0x05645543
+	.long 0x21360104
+	.long 0x65065513
+	.long 0x51122111
+	.long 0x66163033
+	.long 0x65112556
+	.long 0x11120562
+	.long 0x21111413
+	.long 0x03433301
+	.long 0x36410454
+	.long 0x25015435
+	.long 0x15605544
+	.long 0x60565015
+	.long 0x24650216
+	.long 0x22164522
+	.long 0x32433220
+	.long 0x05511251
+	.long 0x61223460
+	.long 0x11306345
+	.long 0x11452022
+	.long 0x33134351
+	.long 0x55546032
+	.long 0x36512151
+	.long 0x22206126
+	.long 0x21211021
+	.long 0x35100565
+	.long 0x54321614
+	.long 0x02632111
+	.long 0x35256302
+	.long 0x51516102
+	.long 0x12346462
+	.long 0x35143115
+	.long 0x10310034
+	.long 0x16166365
+	.long 0x12241525
+	.long 0x62013150
+	.long 0x02363325
+	.long 0x00506333
+	.long 0x56155330
+	.long 0x30605064
+	.long 0x60633050
+	.long 0x32322601
+	li r19, 1975  
+	li r18, 0x3673 
+	b _load
+
+split: 
+	nop
+
+_load:
+	; r22 - r29, fill in!
+	lis r22, 0
+	li r22, 0
+	lis r23, 0
+	li r23, 0
+	lis r24, 0
+	li r24, 0
+	lis r25, 0
+	li r25, 0
+	lis r26, 0
+	li r26, 0
+	lis r27, 0
+	li r27, 0
+	lis r28, 0
+	li r28, 0
+	lis r29, 0
+	li r29, 0
+
+	; lis r22, 0x666c
+	; addi r22, r22, 0x6167
+	; lis r23, 0x7b67
+	; addi r23, r23, 0x3363
+	; lis r24, 0x6b30
+	; addi r24, r24, 0x5f63
+	; lis r25, 0x3064
+	; addi r25, r25, 0x3335
+	; lis r26, 0x5f61
+	; addi r26, r26, 0x7233
+	; lis r27, 0x5f73
+	; addi r27, r27, 0x7431
+	; lis r28, 0x6c6c
+	; addi r28, r28, 0x5f75
+	; lis r29, 0x7333
+	; addi r29, r29, 0x647d
+
+
+	; 13r22: 66 6c 61 67 xor 82459356 (fake xor c001b4b3)
+	; 14r23: 7b 67 33 63 xor 0xaabb1100
+	; 15r24: 6b 30 5f 63
+	; 16r25: 30 64 33 35
+	; 17r26: 5f 61 72 33
+	; 18r27: 5f 73 74 31
+	; 19r28: 6c 6c 5f 75
+	; 20r29: 73 33 64 7d
+	; 21r21: 00 00 00 00
+
+	xori r28, r28, 0xdbca ; 0x84BF
+	xoris r23, r23, 0xc001
+	xori r23, r23, 0x1100 ; 2263
+	xoris r25, r25, 0xc00 ; 0x3c64
+	xoris r26, r26, 0x5e60
+	xoris r29, r29, 0x1111
+	xori r22, r22, 0x3356 ; 0x5231
+	xori r25, r25, 0x3030 ; 0x305
+	xoris r29, r29, 0x5555 ; 0x2666
+	xoris r24, r24, 0x6b6b ; 0x005b
+	xori r23, r23, 0xb4b3
+	xori r22, r22, 0xb4b3
+	xori r26, r26, 0x3abe ; 0x488d
+	xoris r28, r28, 0x7c7c ; 0x1010
+	xori r27, r27, 0x2eef ; 0x5ade
+	xori r24, r24, 0x85 ; 0x5fe6
+	xori r23, r23, 0xb4b3
+	xori r22, r22, 0xb4b3
+	xoris r29, r29, 0x1111
+	xoris r22, r22, 0x4245 ; 0x2429
+	xoris r27, r27, 0x3654 ; 0x6927
+	xori r29, r29, 0x21b2 ; 0x45cf
+	xoris r23, r23, 0x1abb ; 61dc
+	xoris r23, r23, 0xc001
+
+	subis r25, r25, 0x2be1
+	subi r24, r24, 0x3cd3
+	addis r24, r24, 0xa6
+	subi r22, r22, 0x50f4
+	subi r28, r28, 0x739e
+	subis r23, r23, 0x5159
+	subis r26, r26, 0
+	addi r25, r25, 0xd0b
+	subis r28, r28, 0
+	subi r26, r26, 0x478c
+	subi r23, r23, 0x2126
+	subis r27, r27, 0x4f95
+	subis r29, r29, 0x161e
+	subi r27, r27, 0x49bd
+	subi r29, r29, 0x22bc
+	subis r22, r22, 0x13e1
+
+	b loadvalues ; used as splitter
+
+loadvalues:
+	; r13: 0x1048013d good ; h l
+	; r14: 0x1083013d good ; h
+	; r15: 0x01012313 good ; 
+	; r16: 0x10831010 good ; 
+	; r17: 0x01010101 good ; l
+	; r18: 0x19921121 good ; h l
+	; r19: 0x10101121 good ; 
+	; r20: 0x10482313 good ; l
+
+	; blrl trick to load values
+	; r19h, r15l, r16l, r16h
+	; , r17l, r20l, r14h
+	; r14l, , r19l, r18h
+	; r18l, r17h, r15h, r20h
+	; r13h, r13l
+
+	bl constants ; blrl trick jump
+  	mflr r13 ; get start of constants table , jumps by bytes
+
+  	lhz r19, 16(r13) ; r19h
+  	rlwinm. r19, r19, 0x10, 0, 0x1f ; r19h shift
+  	addi r13, r13, 4 ; pointer at 0x(10)83
+  	lhz r15, 10(r13)
+  	addi r13, r13, 0 ; pointer at 0x(10)83
+  	lhz r16, 12(r13)
+  	subi r13, r13, 1 ; pointer at 0x(3D)10
+  	mr r21, r16
+  	lhz r16, 1(r13)
+  	rlwinm. r16, r16, 0x10, 0, 0x1f ; r16h shift
+  	or r16, r16, r21
+
+  	addi r13, r13, 8 ; pointer at 0x(01)19
+  	lhz r17, -1(r13)
+  	lhz r20, 3(r13)
+  	addi r13, r13, 1 ; pointer at 0x(19)92
+  	subi r13, r13, 3 ; pointer at 0x01(01)0101
+  	lhz r21, -5(r13)
+  	rlwinm. r14, r21, 0x10, 0, 0x1f
+
+  	subi r13, r13, 1 ; pointer at 0x(01)010101
+  	lhz r21, -6(r13)
+  	add r14, r21, r14
+  	lhz r21, -2(r13)
+  	or r19, r19, r21
+  	addi r13, r13, 4 ; pointer at 0x(19)92
+  	lhz r21, 0(r13)
+  	rlwinm r18, r21, 0x10, 0, 0x1f
+
+  	bl constants
+  	mflr r13 ; reset to beginning
+
+  	subi r13, r13, 4
+  	lhz r21, 10(r13)
+  	or r18, r18, r21
+  	addi r13, r13, 10 ; pointer at 0x(11)21
+  	mr r21, r17
+  	lhz r17, 2(r13)
+  	rlwinm r17, r17, 0x10, 0, 0x1f
+  	add r17, r21, r17
+  	mr r21, r15
+  	addi r13, r13, 2 ; pointer at 0x(01)010101
+  	lhz r15, 0(r13)
+  	rlwinm r15, r15, 0x10, 0, 0x1f
+  	or r15, r15, r21
+  	mr r21, r20
+  	lhz r20, -8(r13)
+  	rlwinm r20, r20, 0x10, 0, 0x1f
+  	or r20, r21, r20
+
+  	lhz r21, -8(r13)
+  	rlwinm r21, r21, 0x10, 0, 0x1f
+  	lhz r13, -6(r13)
+  	add r13, r21, r13
+
+  	b checkvalues
+
+checkvalues:
+	cmpw r13, r22
+	bne- wrong
+	cmpw r14, r23
+	bne- wrong
+	cmpw r15, r24
+	bne- wrong
+	cmpw r16, r25
+	bne- wrong
+	cmpw r17, r26
+	bne- wrong
+	cmpw r18, r27
+	bne- wrong
+	cmpw r19, r28
+	bne- wrong
+	cmpw r20, r29
+	bne- wrong
+
+	b correct
+
+
+wrong:
+	bl constants
+	mflr r13
+	addi r13, r13, 20
+	b .end
+
+correct:
+	bl constants
+	mflr r13
+	addi r13, r13, 28
+	b .end
+
+constants:
+	blrl
+	.long 0x1048013D ; r13h, r20h; r13l, r14l
+	.long 0x10831121 ; r14h, r16h; r18l, r19l
+	.long 0x01010101 ; r17h, r15h; r17l
+	.long 0x19922313 ;       r18h; r15l, r20l
+	.long 0x10109999 ; r19h, r16l; garbage
+	.long 0x77726f6e ; wrong
+	.long 0x67210000
+	.long 0x436f6e67 ; congrats
+	.long 0x72617473
+.end:
+	nop

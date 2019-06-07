@@ -1,0 +1,10 @@
+extra: string
+name: "Caesar"
+alias: "Caesar"
+author: "Spencer H"
+category: "binary"
+description: "Keith's friend told him he learned how to code a Caesar Cipher from online tutorials! Something doesn't seem right, however. Decipher the mystery at <code>nc shell.hsctf.com 10003</code><br />Files: <a href='|caesar|'>caesar</a> <a href='|caesar.c|'>caesar.c</a>"
+points: 300
+grading: "flag"
+flag: "flag{printered_lol}"
+stage: HSCTF

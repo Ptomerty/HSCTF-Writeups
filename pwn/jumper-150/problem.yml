@@ -1,0 +1,10 @@
+extra: string
+name: "Jumper"
+alias: "Jumper"
+author: "Spencer H"
+category: "binary"
+description: "Feeling nothing / Freely speed up / Landing, Stepping / Jumping, Jumper. Where is Keith hiding? Find out at <code>nc shell.hsctf.com 10001</code><br />Files: <a href='|jumper|'>jumper</a> <a href='|jumper.c|'>jumper.c</a>"
+points: 150
+grading: "flag"
+flag: "flag{keith_has_no_hops}"
+stage: HSCTF

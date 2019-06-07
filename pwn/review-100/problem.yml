@@ -1,0 +1,10 @@
+extra: string
+name: "Review"
+alias: "Review"
+author: "Spencer H"
+category: "binary"
+description: "Keith found this cool site and told me to check it out at <code>nc shell.hsctf.com 10000</code>!<br />Files: <a href='|review|'>review</a> <a href='|review.c|'>review.c</a>"
+points: 100
+grading: "flag"
+flag: "flag{r0tt3n_p0t4t035_rul3z!!!}"
+stage: HSCTF

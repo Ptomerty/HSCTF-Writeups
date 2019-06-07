@@ -1,0 +1,10 @@
+extra: string
+name: "Alarm"
+alias: "Alarm"
+author: "Spencer H"
+category: "binary"
+description: "Keith hates waking up early, so he wrote a custom alarm at <code>nc shell.hsctf.com 10004</code><br />Files: <a href='|alarm|'>alarm</a>"
+points: 500
+grading: "flag"
+flag: "flag{1ts_u4f_0_cl0ck}"
+stage: HSCTF
