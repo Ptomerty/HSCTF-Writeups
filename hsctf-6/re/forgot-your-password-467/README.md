@@ -25,7 +25,9 @@ def next():
 Doing some Googling, we find that the RNG is actually Xoroshiro128+, a performant PRNG that is *not* cryptographically secure. Now, you could simply reverse all of the binary options then use z3 to narrow down the possible seeds, but with clever recon you could find these links:
 
 [Main post on "cracking" xoroshiro128+](https://lemire.me/blog/2017/08/22/cracking-random-number-generators-xoroshiro128/)
+
 [Source code](https://github.com/lemire/crackingxoroshiro128plus)
+
 [Source for prev() function](https://www.reddit.com/r/programming/comments/6va3a8/cracking_random_number_generators_xoroshiro128/dlywdrs/)
 
 As well, the seed we are given is 16 bytes long, or two consecutive outputs of the PRNG. To solve, we can place the string into little-endian format as `0x7373696674637368 0x776f776c6f6f636f`, then run `xoroshiftall.py` to solve for the (only!) seed. From there, you can run the provided `prev()` function a few times to reverse the PRNG state, then simple generate your final key.
