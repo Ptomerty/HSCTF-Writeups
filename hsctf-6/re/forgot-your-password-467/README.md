@@ -31,5 +31,3 @@ Doing some Googling, we find that the RNG is actually Xoroshiro128+, a performan
 As well, the seed we are given is 16 bytes long, or two consecutive outputs of the PRNG. To solve, we can place the string into little-endian format as `0x7373696674637368 0x776f776c6f6f636f`, then run `xoroshiftall.py` to solve for the (only!) seed. From there, you can run the provided `prev()` function a few times to reverse the PRNG state, then simple generate your final key.
 
 Hope you enjoyed :)
-
-^Follow ^me ^on ^Twitter ^@Ptomerty
